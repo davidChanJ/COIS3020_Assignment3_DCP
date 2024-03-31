@@ -11,17 +11,17 @@ namespace COIS3020_Assignment3_DCP
     {
         public bool Add()
         {
-
+            return false;
         }
 
         public bool Front()
         {
-
+            return false;
         }
 
         public bool Remove()
         {
-
+            return false;
         }
 
         public void Print()
