@@ -41,8 +41,8 @@ namespace COIS3020_Assignment3_DCP
         // Add method
         public void Add(int item)
         {
-            // append the node at the end of B
-            B.Add(new BinomialNode(item));
+            // append the node at the beginning of B
+            B.Insert(0, new BinomialNode(item));
             // record the index of the highestPriority node
             if (highestPriorityIndex == -1 || item > B[highestPriorityIndex].Item)
             {
