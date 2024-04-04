@@ -46,4 +46,14 @@ public class Program
         // TODO implement
         root.Print();
     }
+    static void TestTwoThreeFourTree()
+    {
+        //Test insert
+
+        //Test delete parts
+
+        //Test search
+
+        //Test other methods
+    }
 }
