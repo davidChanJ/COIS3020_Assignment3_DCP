@@ -100,7 +100,7 @@ namespace COIS3020_Assignment3_DCP
         {
             //
             int maxDepth = maxDegree > B.Count ? maxDegree + 1 : B.Count * 2;
-            List<BinomialNode> newHeap = new List<BinomialNode>(maxDepth);
+            List<BinomialNode> newHeap = new List<BinomialNode>();
             for (int i = 0; i < maxDepth; i++)
             {
                 newHeap.Add(null);
@@ -136,7 +136,7 @@ namespace COIS3020_Assignment3_DCP
             List<BinomialNode> tempHeap = new List<BinomialNode>();
             int highestPriorityIndex = 0;
             // remove empty slot of newHeap and form tempHeap
-            for (int i = 0; i > newHeap.Count; i++)
+            for (int i = 0; i < newHeap.Count; i++)
             {
                 // insert into tempHeap if newHeap[i] is not empty
                 if (newHeap[i] != null)
