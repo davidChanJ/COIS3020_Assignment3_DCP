@@ -107,7 +107,7 @@ namespace COIS3020_Assignment3_DCP
             {
                 int degree = B[i].Degree;
                 // if newHeap[degree] is empty, insert B[i] directly
-                if /*(newHeap[degree] == null)*/ (!newHeap.Any())
+                if (newHeap[degree] == null)
                 {
                     newHeap[degree] = B[i];
                 }
