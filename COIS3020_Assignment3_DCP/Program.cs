@@ -55,5 +55,9 @@ public class Program
         //Test search
 
         //Test other methods
+
+        //How abou to make Convert() and Print() in part C?
+        //Thank you,
+        //from David.
     }
 }
