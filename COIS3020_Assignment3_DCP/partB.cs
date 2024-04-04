@@ -101,6 +101,10 @@ namespace COIS3020_Assignment3_DCP
             //
             int maxDepth = maxDegree > B.Count ? maxDegree + 1 : B.Count * 2;
             List<BinomialNode> newHeap = new List<BinomialNode>(maxDepth);
+            for (int i = 0; i < maxDepth; i++)
+            {
+                newHeap.Add(null);
+            }
             int newMaxDegree = 0;
             // loop over the original binomial heap
             for (int i = 0; i < B.Count; i++)
