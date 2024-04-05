@@ -1,17 +1,20 @@
-﻿using COIS3020_Assignment3_DCP;
+﻿
+using COIS3020_Assignment3_DCP;
+using DavidDataStructureAssignment3;
 
-public class Program
+class Program
 {
     static void Main(string[] args)
     {
         TestQuadTree();
 
         TestLazyBinomialHeap();
+
+        TestTwoThreeFourTree();
     }
 
     static void TestQuadTree()
     {
-        Console.WriteLine("Testing Quad Tree -- Part A \n");
         int[] value = { 1, 1, 1, 1, 1 };
         QuadTree originalTree = new QuadTree(value);
 
@@ -24,7 +27,6 @@ public class Program
 
     static void TestLazyBinomialHeap()
     {
-        Console.WriteLine("Testing Lazy Binomial Heap -- Part B \n");
         LazyBinomialHeap root = new LazyBinomialHeap();
         root.Add(3);
         root.Add(6);
@@ -46,18 +48,27 @@ public class Program
         // TODO implement
         root.Print();
     }
+
     static void TestTwoThreeFourTree()
     {
-        //Test insert
+        TwoThreeFourTree<int> root = new TwoThreeFourTree<int>();
 
-        //Test delete parts
+        root.Insert(1);
+        root.Insert(2);
+        root.Insert(3);
+        root.Insert(4);
+        root.Insert(5);
+        root.Insert(6);
+        root.Insert(7);
+        root.Insert(8);
+        root.Insert(9);
+        root.Insert(10);
 
-        //Test search
+        //TODO implement
+        root.Print();
 
-        //Test other methods
+        root.Delete(10);
 
-        //How abou to make Convert() and Print() in part C?
-        //Thank you,
-        //from David.
+        root.Print();
     }
 }

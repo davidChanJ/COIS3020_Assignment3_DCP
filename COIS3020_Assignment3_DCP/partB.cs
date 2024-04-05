@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace COIS3020_Assignment3_DCP
+namespace DavidDataStructureAssignment3
 {
     public class BinomialNode
     {
@@ -173,4 +167,6 @@ namespace COIS3020_Assignment3_DCP
             }
         }
     }
+
 }
+
