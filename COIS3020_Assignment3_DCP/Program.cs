@@ -61,6 +61,7 @@ class Program
         root.Insert(3);
         root.Insert(4);
         root.Insert(5);
+        root.Print();
         root.Insert(6);
         root.Insert(7);
         root.Insert(8);
