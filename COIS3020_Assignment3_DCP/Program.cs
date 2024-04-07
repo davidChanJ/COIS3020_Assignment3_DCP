@@ -15,6 +15,7 @@ class Program
 
     static void TestQuadTree()
     {
+        Console.WriteLine("Testing QuadTree: \n");
         int[] value = { 1, 1, 1, 1, 1 };
         QuadTree originalTree = new QuadTree(value);
 
@@ -27,6 +28,7 @@ class Program
 
     static void TestLazyBinomialHeap()
     {
+        Console.WriteLine("\nTesting LazyBinomialHeap: \n");
         LazyBinomialHeap root = new LazyBinomialHeap();
         root.Add(3);
         root.Add(6);
@@ -51,6 +53,7 @@ class Program
 
     static void TestTwoThreeFourTree()
     {
+        Console.WriteLine("\nTesting TwoThreeFourTree: \n");
         TwoThreeFourTree<int> root = new TwoThreeFourTree<int>();
 
         root.Insert(1);
@@ -65,10 +68,10 @@ class Program
         root.Insert(10);
 
         //TODO implement
+        Console.WriteLine("Printing after inserting 1-10:\n");
         root.Print();
-
         root.Delete(10);
-
+        Console.WriteLine("Printing after deleting 10:\n");
         root.Print();
     }
 }

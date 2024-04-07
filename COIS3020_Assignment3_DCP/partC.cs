@@ -431,6 +431,31 @@ namespace DavidDataStructureAssignment3
 
             return false;
         }
+
+        public void Print()
+        {
+            if (root == null)
+            {
+                Console.WriteLine("Tree is empty.");
+            }
+            else
+            {
+                PrintInorder(root);
+            }
+        }
+
+        private void PrintInorder(Node node)
+        {
+            if (node != null)
+            {
+                for (int i = 0; i < node.Keys.Count; i++)
+                {
+                    PrintInorder(node.Children[i]);
+                    Console.Write(node.Keys[i] + " ");
+                }
+                PrintInorder(node.Children[node.Keys.Count]);
+            }
+        }
     }
 }
 
