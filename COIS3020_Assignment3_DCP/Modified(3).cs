@@ -118,22 +118,22 @@ namespace BSTforRBTree
 
     //-----------------------------------------------------------------------------
 
-    public class Program
-    {
-        static void Main(string[] args)
-        {
-            Random randomValue = new Random();       // Random number
-            Color c;
+    //public class Program
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        Random randomValue = new Random();       // Random number
+    //        Color c;
 
-            BSTforRBTree<int> B = new BSTforRBTree<int>();
-            for (int i = 0; i < 20; i++)
-            {
-                c = i%2 == 0 ? Color.RED : Color.BLACK; 
-                B.Add(randomValue.Next(90) + 10, c); // Add random integers with alternating colours
-            }
-            B.Print();                               // In order
+    //        BSTforRBTree<int> B = new BSTforRBTree<int>();
+    //        for (int i = 0; i < 20; i++)
+    //        {
+    //            c = i%2 == 0 ? Color.RED : Color.BLACK; 
+    //            B.Add(randomValue.Next(90) + 10, c); // Add random integers with alternating colours
+    //        }
+    //        B.Print();                               // In order
 
-            Console.ReadLine();
-        }
-    }
+    //        Console.ReadLine();
+    //    }
+    //}
 }
