@@ -467,10 +467,17 @@ namespace COIS3020_Assignment3_DCP
             {
                 for (int i = 0; i < node.Keys.Count; i++)
                 {
-                    PrintInorder(node.Children[i]);
+                    if (!node.isLeafNode())
+                    {
+                        PrintInorder(node.Children[i]);
+                    }
+                   
                     Console.Write(node.Keys[i] + " ");
                 }
-                PrintInorder(node.Children[node.Keys.Count]);
+                if (!node.isLeafNode())
+                {
+                    PrintInorder(node.Children[node.Keys.Count]);
+                }
             }
         }
 

@@ -60,7 +60,6 @@ class Program
         root.Insert(3);
         root.Insert(4);
         root.Insert(5);
-        root.Print();
         root.Insert(6);
         root.Insert(7);
         root.Insert(8);
@@ -68,8 +67,8 @@ class Program
         root.Insert(10);
 
         //TODO implement
-        Console.WriteLine("Printing after inserting 1-10:\n");
-        root.Print();
+        //Console.WriteLine("Printing after inserting 1-10:\n");
+        //root.Print();
         root.Delete(10);
         Console.WriteLine("Printing after deleting 10:\n");
         root.Print();
