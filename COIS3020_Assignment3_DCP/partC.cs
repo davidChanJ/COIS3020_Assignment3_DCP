@@ -1,5 +1,5 @@
 ﻿using System;
-namespace DavidDataStructureAssignment3
+namespace COIS3020_Assignment3_DCP
 {
     public class TwoThreeFourTree<T> where T : IComparable<T>
     {
@@ -15,7 +15,7 @@ namespace DavidDataStructureAssignment3
 
             public bool isLeafNode()
             {
-                if (Children.Count == 0)    //Checking if there is a leaf node as no children after the node
+                if (Children.Count == 0)
                 {
                     return true;
                 }
@@ -43,10 +43,12 @@ namespace DavidDataStructureAssignment3
 
             // find path to k or fullnode along the path to k
             List<Node> path = PathToKeyOrFullNode(k);
-            Node lastNode = path[path.Count - 1];
+            Node lastNode;
 
             while (path[path.Count - 1].Keys.Count == maxKeys)
             {
+                lastNode = path[path.Count - 1];
+
                 // split and move up
                 if (lastNode.Keys.Count == maxKeys)
                 {
@@ -75,14 +77,24 @@ namespace DavidDataStructureAssignment3
                     {
                         // node to contain the ascend node
                         Node parentNode = path[path.Count - 2];
-                        for (int j = 0; j < parentNode.Keys.Count; j++)
+                        int j;
+                        for (j = 0; j < parentNode.Keys.Count; j++)
                         {
                             if (middleNode.Keys[0].CompareTo(parentNode.Keys[j]) < 0)
                             {
                                 parentNode.Keys.Insert(j, middleNode.Keys[0]);
-                                parentNode.Children.Insert(0, leftNode);
-                                parentNode.Children.Insert(1, rightNode);
+                                parentNode.Children.RemoveAt(j);
+                                parentNode.Children.Insert(j, leftNode);
+                                parentNode.Children.Insert(j + 1, rightNode);
                             }
+                        }
+                        if (j == parentNode.Keys.Count)
+                        {
+                            parentNode.Keys.Add(middleNode.Keys[0]);
+                            parentNode.Children.RemoveAt(j);
+                            parentNode.Children.Insert(j, leftNode);
+                            parentNode.Children.Insert(j + 1, rightNode);
+
                         }
                     }
 
@@ -176,7 +188,6 @@ namespace DavidDataStructureAssignment3
             // k is in internal node
             else
             {
-
                 int kIndex = lastNode.Keys.IndexOf(k);
                 // search for k's successor
                 T successor;
@@ -210,17 +221,23 @@ namespace DavidDataStructureAssignment3
                     return true;
                 }
 
-                if (temp.Keys.Count > 0)
+                // both successor and predecessor node have only one key
+                // run PrepareForDelete to make one of them have two key
+                List<Node> pathToSuccessor = PrepareForDelete(successor);
+                Node newSuccessorNode = pathToSuccessor[pathToSuccessor.Count - 1];
+                if (newSuccessorNode.isLeafNode() && newSuccessorNode.Keys.Count > 1)
                 {
-                    lastNode.Keys[kIndex] = successor;
-                    temp.Keys.RemoveAt(0);
+                    lastNode.Keys[kIndex] = newSuccessorNode.Keys[0];
+                    newSuccessorNode.Keys.RemoveAt(0);
                     return true;
                 }
 
-                if (temp2.Keys.Count > 0)
+                List<Node> pathToPredecessor = PrepareForDelete(predecessor);
+                Node newPredecessorNode = pathToPredecessor[pathToPredecessor.Count - 1];
+                if (newPredecessorNode.isLeafNode() && newPredecessorNode.Keys.Count > 1)
                 {
-                    lastNode.Keys[kIndex] = predecessor;
-                    temp2.Keys.RemoveAt(temp2.Keys.Count - 1);
+                    lastNode.Keys[kIndex] = newPredecessorNode.Keys[0];
+                    newPredecessorNode.Keys.RemoveAt(0);
                     return true;
                 }
             }
@@ -456,6 +473,7 @@ namespace DavidDataStructureAssignment3
                 PrintInorder(node.Children[node.Keys.Count]);
             }
         }
+
+
     }
 }
-
