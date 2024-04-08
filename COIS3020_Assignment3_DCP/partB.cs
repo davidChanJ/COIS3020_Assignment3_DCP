@@ -1,5 +1,5 @@
 ﻿using System;
-namespace DavidDataStructureAssignment3
+namespace COIS3020_Assignment3_DCP
 {
     public class BinomialNode
     {
@@ -167,6 +167,7 @@ namespace DavidDataStructureAssignment3
             }
         }
     }
+
 
 }
 
