@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BSTforRBTree;
+using System;
 namespace COIS3020_Assignment3_DCP
 {
     public class TwoThreeFourTree<T> where T : IComparable<T>
@@ -481,6 +482,46 @@ namespace COIS3020_Assignment3_DCP
             }
         }
 
+        //public BSTforRBTree<T> Convert()
+        //{
+        //    BSTforRBTree<T> rbTree = new BSTforRBTree<T>();
+        //    rbTree.root = ConvertToRBTree(root);
+        //    return rbTree;
+        //}
 
+        //private BSTforRBTree<T>.Node ConvertToRBTree(Node node)
+        //{
+        //    if (node == null)
+        //        return null;S
+
+        //    BSTforRBTree<T>.Node rbNode = new BSTforRBTree<T>.Node(node.Keys[0], Color.BLACK);
+
+        //    if (node.Keys.Count == 2)
+        //    {
+        //        BSTforRBTree<T>.Node rbRightNode = new BSTforRBTree<T>.Node(node.Keys[1], Color.RED);
+        //        rbNode.Right = rbRightNode;
+        //        rbNode.Left = ConvertToRBTree(node.Children[0]);
+        //        rbRightNode.Left = ConvertToRBTree(node.Children[1]);
+        //        rbRightNode.Right = ConvertToRBTree(node.Children[2]);
+        //    }
+        //    else if (node.Keys.Count == 3)
+        //    {
+        //        BSTforRBTree<T>.Node rbMiddleNode = new BSTforRBTree<T>.Node(node.Keys[1], Color.RED);
+        //        BSTforRBTree<T>.Node rbRightNode = new BSTforRBTree<T>.Node(node.Keys[2], Color.RED);
+        //        rbNode.Right = rbMiddleNode;
+        //        rbMiddleNode.Right = rbRightNode;
+        //        rbNode.Left = ConvertToRBTree(node.Children[0]);
+        //        rbMiddleNode.Left = ConvertToRBTree(node.Children[1]);
+        //        rbRightNode.Left = ConvertToRBTree(node.Children[2]);
+        //        rbRightNode.Right = ConvertToRBTree(node.Children[3]);
+        //    }
+        //    else
+        //    {
+        //        rbNode.Left = ConvertToRBTree(node.Children[0]);
+        //        rbNode.Right = ConvertToRBTree(node.Children[1]);
+        //    }
+
+        //    return rbNode;
+        //}
     }
 }

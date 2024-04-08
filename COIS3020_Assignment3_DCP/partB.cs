@@ -85,11 +85,6 @@ namespace COIS3020_Assignment3_DCP
         }
 
         // TODO implement
-        public void Print()
-        {
-
-        }
-
         private void Coalesce()
         {
             //
@@ -166,8 +161,33 @@ namespace COIS3020_Assignment3_DCP
                 return q;
             }
         }
+
+        public void Print()
+        {
+            if (B.Count == 0)
+            {
+                Console.WriteLine("Heap is empty.");
+            }
+            else
+            {
+                Console.WriteLine("Heap elements:");
+                foreach (var node in B)
+                {
+                    PrintInorder(node);
+                }
+            }
+        }
+
+        private void PrintInorder(BinomialNode node)
+        {
+            if (node != null)
+            {
+                Console.Write(node.Item + " ");
+                PrintInorder(node.LeftMostChild);
+                PrintInorder(node.RightSibling);
+            }
+        }
+
     }
-
-
 }
 

@@ -47,6 +47,7 @@ class Program
 
 
         // TODO implement
+        Console.WriteLine("Printing the heap: ");
         root.Print();
     }
 
@@ -72,5 +73,10 @@ class Program
         root.Delete(10);
         Console.WriteLine("Printing after deleting 10:\n");
         root.Print();
+
+        Console.WriteLine("\nDoing search:\n");
+        Console.WriteLine("The 6 is: {0}",root.Search(6));
+        Console.WriteLine("The 10 is: {0}", root.Search(10));
+
     }
 }
